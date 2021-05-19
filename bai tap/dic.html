@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div>
+        <h1>Welcome to simple dictionary</h1>
+        <div><p>English</p></div>
+        <div><input type="text" id="engInput"></div> <br/>
+        <div><button type="button" onclick="solve()">Translate</button></div>
+        <div id="result"></div>
+    </div>
+</body>
+</html>
+<script>
+    let Eng_arrs = ['dog','cat','sheep','cow','buffalo','spider','chicken','fish'];
+    let Vi_arrs = ['chó','mèo','cừu','bò đực','trâu','nhện','gà','cá'];
+    function solve(){
+        let index;
+        let is_available =true;
+        let textInput = document.getElementById('engInput').value;
+        for( let i = 0 ; i < Eng_arrs.length; i++ ){
+            if (textInput === Eng_arrs[i]) {
+                is_available = true;
+                index = i;
+                break;
+            } else {
+                is_available = false;
+            }
+        }
+        if (is_available === true) {
+            document.getElementById('result').innerHTML = Vi_arrs[index]; 
+        } else {
+            document.getElementById('result').innerHTML = 'not found';
+        }
+    }
+</script>
