@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let numbers = prompt('Input a number: ');
+    let display = [];
+    for (let i = 0; i < numbers.length ; i++){
+        if ((numbers[i] % 2 == 0)&&(numbers[i+1] % 2 == 0)) {
+            display.push(numbers[i],'-');
+        } else {
+            display.push(numbers[i]);
+        }
+    }
+    console.log(display.join(''));
+</script>
